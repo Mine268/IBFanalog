@@ -1,0 +1,6 @@
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\IBF模拟\IBF模拟\bin\Debug\IBF模拟.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\IBF模拟\IBF模拟\bin\Debug\IBF模拟.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\IBF模拟\IBF模拟\bin\Debug\IBF模拟.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\IBF模拟\IBF模拟\obj\Debug\IBF模拟.exe
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\IBF模拟\IBF模拟\obj\Debug\IBF模拟.pdb
+C:\Users\Administrator\Documents\Visual Studio 2013\Projects\IBF模拟\IBF模拟\obj\Debug\IBF模拟.csprojResolveAssemblyReference.cache
