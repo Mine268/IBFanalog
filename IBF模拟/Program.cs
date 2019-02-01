@@ -13,6 +13,24 @@ namespace IBF模拟
         {
             a = args;
             runS();
+
+            //double bestV = 0, bestBh = 0, ve = 0, vet = 0; // 最优解
+            //for (double V = 5.0; V <= 15; V += 0.1)
+            //{
+            //    for (double B = 0.1; B <= 2.0; B += 0.01)
+            //    {
+            //        vet = bestB(0.2, .0000103, 0.013, 20, B, 0.01, V, 0.00001);
+            //        if (vet > ve)
+            //        {
+            //            ve = vet;
+            //            bestV = V; bestBh = B;
+            //        }
+            //    }
+            //    Console.Write("({0:F4},{1:F4}),", bestV, bestBh);
+            //    bestV = 0; bestV = 0;
+            //}
+            //Console.ReadKey(false);
+
         }
 
         static void runS()
@@ -77,6 +95,42 @@ namespace IBF模拟
             Console.ForegroundColor = ConsoleColor.White;
 
             //Console.WriteLine(":{0:F4}", v0);
+        }
+
+        static double bestB(double u, double k_a, double mass, double v0, double Bh, double w, double E0, double Rl)
+        {
+            double x = 0, l = 0.6, dt = 0.0000001, time = 0; double vo = v0;
+
+            // int i = 0;
+
+            double force = 0;
+            double air_f = 0;
+            double Er = 0;
+            double cur = 0;
+            double a = 0;
+            while (x <= l)
+            {
+                Er = v0 * Bh * w; // 逆向电压
+                cur = (E0 - Er) / Rl; // 电流
+                air_f = k_a * v0 * v0; // 空气阻力
+
+                force = cur * Bh * w - u * mass * 9.732 - air_f; // 合外力
+                a = force / mass; //加速度
+
+                x += v0 * dt; // 小量速度累加得位移
+                v0 += a * dt; // 小量加速度累加得速度变化量
+                time += dt; // 时间计算
+
+                //if (i == 100)
+                //{
+                //    Console.Write("({0},{1}),", time * 10000, Er);
+                //    i = 0;
+                //}
+                //else i++;
+            }
+            // tempUp = heat / (880 * mass);
+
+            return v0;
         }
     }
 }
